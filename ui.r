@@ -20,13 +20,13 @@ library(shinydashboard)
 ui <- dashboardPage(skin = "black",
 dashboardHeader(title = "Correlational statistics",titleWidth = 350), 
 dashboardSidebar(width = 350,
-                 sidebarMenu(menuItem("", tabName = "home", icon = icon("home")),
-                                         menuItem("Draw Correlation", tabName = "tab1"),
-                                         menuItem("Calculate Correlation", tabName = "tab2"),
-                                         menuItem("Regression", tabName = "tab3"),
-                                         menuItem("Disclaimer", tabName = "Disclaimer"), 
-                                         HTML("<br><br><br><br><br><br><br><br><br><br><br><br><br><br>"), 
-                                         img(src='cm_hs_uu-logoengels_diapositief_rgb.png', align = "left")
+                 sidebarMenu(#menuItem("", tabName = "home", icon = icon("home")),
+                             menuItem("Draw Correlation", tabName = "tab1"),
+                             menuItem("Calculate Correlation", tabName = "tab2"),
+                             menuItem("Regression", tabName = "tab3"),
+                             menuItem("Disclaimer", tabName = "Disclaimer"), 
+                             HTML("<br><br><br><br><br><br><br><br><br><br><br><br><br><br>"), 
+                             img(src='logo.png', align = "left")
                              ) #end sidebarMenu
                  ), #end dashboardsidebar
 dashboardBody(
