@@ -26,7 +26,7 @@ dashboardSidebar(width = 350,
                              menuItem("Regression", tabName = "tab3"),
                              menuItem("Disclaimer", tabName = "Disclaimer"), 
                              HTML("<br><br><br><br><br><br><br><br><br><br><br><br><br><br>"), 
-                             img(src='logo.png', align = "left")
+                             img(src= "logo.png", align = "left")
                              ) #end sidebarMenu
                  ), #end dashboardsidebar
 dashboardBody(
@@ -77,7 +77,10 @@ dashboardBody(
     # now for the content of the different tabs.
     # Disclaimer tab, university disclaimer.
     tabItem(tabName = "Disclaimer", 
-            box(width = 12, h5("Terms of Usage Utrecht Unversity Shiny Server", br(), br(),
+            box(width = 12, 
+                h5("Terms of Usage Utrecht Unversity Shiny Server", 
+                   br(), 
+                   br(),
                   tags$ul(
                           tags$li("Purpose of the service “utrecht-university.shinyapps.io” 
                                   is to provide a digital place for trying out, evaluating 
@@ -93,9 +96,17 @@ dashboardBody(
                                   intellectual property. You shall not upload data with any confidential or proprietary information 
                                   that you desire or are required to keep secret. "),
                           tags$li("By using this app you agree to be bound by the above terms.")
-                          )# end tags$ul
+                          ) # end tags$ul
+                  ), # end h5
+                h5("Development and questions",
+                  br(),
+                  br(),
+                  tags$ul(
+                    tags$li("Utrecht University lay-out developed by Kimberley Lek (k.m.lek@uu.nl)."),
+                    tags$li("This application is developed by Duco Veen (d.veen@uu.nl).")
+                    ) # end tags$ul
                   ) # end h5
-                  ) # end box
+                ) # end box
             ), # end tab Item (disclaimer tab.)
     
     # Correlation tab, university disclaimer.
@@ -137,8 +148,8 @@ dashboardBody(
                    plotOutput("plot2",width = 800, height = 600, click = "plot_click") ), 
               # plot in which correlation can be drawn and end of this box
               box ( width = 12, align = "center", # box for undo and reset buttons
-                    actionButton("Undo", "Undo"), # action button that allows the previous point to be deleted 
-                    actionButton("reset", "Reset") # action button to restart with clean plot
+                    actionButton("Undo2", "Undo"), # action button that allows the previous point to be deleted 
+                    actionButton("reset2", "Reset") # action button to restart with clean plot
               ) # end box
             ) # end fluidrow
     ) # end tabItem (regression tab)

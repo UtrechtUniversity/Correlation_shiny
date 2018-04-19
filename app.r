@@ -11,6 +11,9 @@
 
 # File description:
 # This is only the source file for the application. The UI and Server are loaded and started.
+# Load the app via the load app button on the top, not by selecting and running the code.
+# Otherwise the UU logo won't show, see: 
+# https://stackoverflow.com/questions/38011285/image-not-showing-in-shiny-app-r
 
 source("ui.r") # Source ui
 source("server.r") # Source server
