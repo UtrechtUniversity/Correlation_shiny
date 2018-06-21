@@ -99,7 +99,7 @@ dashboardBody(
                           ) # end tags$ul
                   ), # end h5
                 h5("Development and questions",
-                  br(),
+                  br(), 
                   br(),
                   tags$ul(
                     tags$li("Utrecht University lay-out developed by Kimberley Lek (k.m.lek@uu.nl)."),
@@ -113,8 +113,8 @@ dashboardBody(
     tabItem(tabName = "tab1", 
             fluidRow( 
               box( width = 12, h4("Draw your correlation"), align = "center",
-                   h5("By clicking in the plot you add new data points. See what happens to your correlation when you add data points."),
-                   h5("To see how the correlation between the points is calculated click on the tab 'Calculate Correlation'"),
+                   #h5("By clicking in the plot you add new data points. See what happens to your correlation when you add data points."),
+                   #h5("To see how the correlation between the points is calculated click on the tab 'Calculate Correlation'"),
                    # explanation what students should do
                    plotOutput("plot1",width = 800, height = 600, click = "plot_click") ), 
               # plot in which correlation can be drawn and end of this box

@@ -30,10 +30,11 @@ server <- function(input, output) {
     y <- vv$range
     # y coordinates obtained from points "clicked" in the plot
     points(x,y)
-    # draw points at x, y coordinates.
+    # draw points at x, y coordinates. 
     if(length(x)>2){
-      legend("topleft", c(paste("Correlation:", signif( cor.test(x = x, y = y)$estimate, 2)),
-                          paste("p-value:", round( cor.test(x = x, y = y)$p.value, 2))),
+      abline(lm(y~x),type="l")
+      legend("topleft", c(paste("Correlation:", signif( cor.test(x = x, y = y)$estimate, 3)),
+                          paste("p-value:", round( cor.test(x = x, y = y)$p.value, 3))),
              bty= "n",cex=1.5)} else {
         legend("topleft",c("Correlation: --", "p-value: --"),bty="n",cex=1.5)
       }
@@ -83,8 +84,8 @@ server <- function(input, output) {
     y <- vv$range
     points(x,y)
     if(length(x)>2){
-      legend("topleft",c(paste("Regression intercept:",signif(lm(y~x)$coefficients[1],2)),
-                         paste("Regression slope:",signif(lm(y~x)$coefficients[2],2))),bty= "n",cex=1.5)
+      legend("topleft",c(paste("Regression intercept:",signif(lm(y~x)$coefficients[1],3)),
+                         paste("Regression slope:",signif(lm(y~x)$coefficients[2],3))),bty= "n",cex=1.5)
       abline(lm(y~x),type="l")
     } else {
       legend("topleft",c("Regression intercept: --","Regression slope: --"),bty="n",cex=1.5)
