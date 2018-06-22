@@ -26,7 +26,24 @@ dashboardSidebar(width = 350,
                              menuItem("Regression", tabName = "tab3"),
                              menuItem("Disclaimer", tabName = "Disclaimer"), 
                              HTML("<br><br><br><br><br><br><br><br><br><br><br><br><br><br>"), 
-                             img(src= "logo.png", align = "left")
+                             img(src= "logo.png", align = "left"),
+                             br(), 
+                             div("Shiny app by",
+                                 a(href="https://www.uu.nl/staff/dveen",
+                                   target = "_blank",
+                                   "Duco Veen"),align="right", style = "font-size: 10pt"),
+                             
+                             div("Base R code by",
+                                 a(href="https://www.uu.nl/staff/dveen",target="_blank",
+                                   "Duco Veen"),align="right", style = "font-size: 10pt"),
+                             
+                             div("Base Layout by",
+                                 a(href="https://www.uu.nl/medewerkers/KMLek/0",target="_blank",
+                                   "Kimberley Lek"),align="right", style = "font-size: 10pt"),
+                             
+                             div("Shiny source files:",
+                                 a(href="https://github.com/EducationalShinyUU/Correlation_shiny",
+                                   target="_blank","GitHub"),align="right", style = "font-size: 10pt")
                              ) #end sidebarMenu
                  ), #end dashboardsidebar
 dashboardBody(
@@ -97,22 +114,14 @@ dashboardBody(
                                   that you desire or are required to keep secret. "),
                           tags$li("By using this app you agree to be bound by the above terms.")
                           ) # end tags$ul
-                  ), # end h5
-                h5("Development and questions",
-                  br(), 
-                  br(),
-                  tags$ul(
-                    tags$li("Utrecht University lay-out developed by Kimberley Lek (k.m.lek@uu.nl)."),
-                    tags$li("This application is developed by Duco Veen (d.veen@uu.nl).")
-                    ) # end tags$ul
-                  ) # end h5
+                  )
                 ) # end box
             ), # end tab Item (disclaimer tab.)
     
     # Correlation tab, university disclaimer.
     tabItem(tabName = "tab1", 
             fluidRow( 
-              box( width = 12, h4("Draw your correlation"), align = "center",
+              box( width = 12, align = "center",
                    #h5("By clicking in the plot you add new data points. See what happens to your correlation when you add data points."),
                    #h5("To see how the correlation between the points is calculated click on the tab 'Calculate Correlation'"),
                    # explanation what students should do
@@ -140,10 +149,10 @@ dashboardBody(
     # Regression tab
     tabItem(tabName = "tab3", 
             fluidRow( 
-              box( width = 12, h4("Regression"), align = "center",
-                   h5("The same data for the regression can be used to describe a regerssion too."),
-                   h5("We have the same plot as the 'Correlation' and can still add new points. 
-                      Only now you get the results of a regression analyses."),
+              box( width = 12, align = "center",
+                   #h5("The same data for the regression can be used to describe a regerssion too."),
+                   #h5("We have the same plot as the 'Correlation' and can still add new points. 
+                  #    Only now you get the results of a regression analyses."),
                    # explanation what students should do
                    plotOutput("plot2",width = 800, height = 600, click = "plot_click") ), 
               # plot in which correlation can be drawn and end of this box

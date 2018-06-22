@@ -23,14 +23,14 @@ server <- function(input, output) {
   
   # plot for correlation tab. 
   output$plot1 <- renderPlot({
-    plot(NA,NA,xlim=c(1,10),ylim=c(1,10),xlab="MTS1 grade",ylab="MTS2 grade") 
+    plot(NA,NA,xlim=c(0,10),ylim=c(0,10),xlab="X",ylab="Y", main = "Draw your correlation") 
     # create an empty plot
     x <- v$range
     # x coordinates obtained from points "clicked" in the plot
     y <- vv$range
     # y coordinates obtained from points "clicked" in the plot
     points(x,y)
-    # draw points at x, y coordinates. 
+    # draw points at x, y coordinates.
     if(length(x)>2){
       abline(lm(y~x),type="l")
       legend("topleft", c(paste("Correlation:", signif( cor.test(x = x, y = y)$estimate, 3)),
@@ -54,7 +54,7 @@ server <- function(input, output) {
     BB <- B * B # Sum Squared y
     
     table.cor <- cbind(x, y, A, B, AB, AA, BB) # bind these in a table
-    colnames(table.cor) <- c("X (MTS1 grade)","Y (MTS2 grade)","X - M_x","Y - M_y", "SP", "SS_x", "SS_p")
+    colnames(table.cor) <- c("X","Y","X - M_x","Y - M_y", "SP", "SS_x", "SS_p")
     # table column names
     table.cor
   })
@@ -79,7 +79,7 @@ server <- function(input, output) {
   
   
   output$plot2 <- renderPlot({
-    plot(NA,NA,xlim=c(1,10),ylim=c(1,10),xlab="MTS1 grade",ylab="MTS2 grade") 
+    plot(NA,NA,xlim=c(0,10),ylim=c(0,10),xlab="X",ylab="Y",main="Regression") 
     x <- v$range
     y <- vv$range
     points(x,y)

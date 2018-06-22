@@ -5,6 +5,6 @@ account: utrecht-university
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 320570
-bundleId: 1440975
+bundleId: 1440973
 url: https://utrecht-university.shinyapps.io/correlation/
-when: 1529580107.10414
+when: 1529579878.8464
